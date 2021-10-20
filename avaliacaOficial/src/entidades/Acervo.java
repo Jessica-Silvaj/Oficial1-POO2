@@ -141,12 +141,14 @@ public class Acervo {
 						Scanner remover = new Scanner(System.in);
 						System.out.println("Informe o titulo do livro: ");
 						String removerLivro = remover.nextLine();
-                         
-						if(livros.getTitulo().contains(removerLivro)) {
-						listaLivros.remove(removerLivro);
-						System.out.println("Livro removido com sucesso! ");
-						} else {
-							System.err.println("O titulo está incorreto, tente novamente!");
+
+						for (LivroGenero livrosRemover : listaLivros) {
+							if (livrosRemover.getTitulo().equals(removerLivro)) {
+								listaLivros.remove(removerLivro);
+								System.out.println("Livro removido com sucesso! ");
+							} else {
+								System.err.println("O titulo está incorreto, tente novamente!");
+							}
 						}
 						
 						break;
